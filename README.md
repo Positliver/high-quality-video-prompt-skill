@@ -12,6 +12,11 @@
 - 电影感短预告
 - 科幻 / 奇幻 / 赛博朋克 / 悬疑风视频
 
+## 新增行为约束
+- 当关键信息缺失时，Skill 会先与用户交互补齐信息，再输出正式提示词。
+- 品牌类需求会优先确认：是否需要品牌 LOGO、品牌名、标语、片尾封板。
+- 最终输出给用户的正式提示词正文长度不超过 2000 字。
+
 ## 仓库结构
 ```text
 high-quality-video-prompt-skill/
@@ -42,7 +47,11 @@ clawhub login
 
 单独发布这个 skill：
 ```bash
-clawhub publish ./high-quality-video-prompt-skill   --slug high-quality-video-prompt-skill   --name "High Quality Video Prompt Skill"   --version 1.0.0   --tags latest,video,prompt,cinematic
+clawhub publish ./high-quality-video-prompt-skill \
+  --slug high-quality-video-prompt-skill \
+  --name "High Quality Video Prompt Skill" \
+  --version 1.1.0 \
+  --tags latest,video,prompt,cinematic
 ```
 
 或者把本地 skills 一起扫描并同步：
